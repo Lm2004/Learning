@@ -17,12 +17,9 @@ a=0
 m = 0
 t = 0
 while a<7:
-
-        a = a + 1
-        m_1 = m + 1
-        
-        
+        a += 1
         try:
+                #better to check if the element is present?
                 driver.find_elements_by_xpath('//button[@class="banner-alert-close-button js-close"]')[0].click()
         except:
                 pass
@@ -39,7 +36,7 @@ while a<7:
                 pass
         
         try:
-                if website[t] == website[m]:
+                if website[t] == website[m]: #is this for checking for duplicates? use list comprehension to avoid duplicates
                         website.pop()
                         driver.get('https://coinmarketcap.com/')
                         for master in driver.find_elements_by_xpath('//a[@class="currency-name-container link-secondary"]')[m]:
@@ -49,21 +46,17 @@ while a<7:
                         pass
         except:
                 pass
-        
-        
-        
-        
-        
+
         m = m + 1
         t = m - 1
         driver.get('https://coinmarketcap.com/')
 print(name)
 print(website)
+driver.quit()
 
 """
 df = pd.DataFrame({'name': name ,'link': website})
 df.to_csv('Criptonic.csv', index=False, encoding='utf-8')
 print(df)
 
-driver.quit()
 """
