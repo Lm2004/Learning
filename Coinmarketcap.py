@@ -52,6 +52,7 @@ while a<7:
         driver.get('https://coinmarketcap.com/')
 print(name)
 print(website)
+#todo quit when not needed
 driver.quit()
 
 """
