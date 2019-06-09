@@ -1,0 +1,7 @@
+1560100492131	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\AndrewB\\AppData\\Local\\Temp\\rust_mozprofile.ptALNKG5sIsq"
+1560100507397	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\AndrewB\\AppData\\Local\\Temp\\rust_mozprofile.ed40X4dfCrFh"
+1560100507750	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1560100507750	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1560100507750	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1560100509137	Marionette	INFO	Listening on port 52521
+1560100509412	Marionette	WARN	TLS certificate errors will be ignored for this session
