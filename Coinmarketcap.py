@@ -28,15 +28,17 @@ if a<7:
         except:
                 pass
         m = m + 1
+        a = a + 1
+a = 0
 m = 0
 driver.get('https://coinmarketcap.com/')
 if a<7:
-        driver.get('https://coinmarketcap.com/')
-        for master in driver.find_elements_by_xpath('//a[@class="currency-name-container link-secondary"]')[m]:
-                                master_1 = link.get_attribute('href')
-        website.append(master_1)
-        driver.execute_script("window.history.go(-1)")
+        for link in driver.find_elements_by_xpath('//a[@class="currency-name-container link-secondary"]')[m]:
+                Coinlink = link.get_attribute('href')
+        website.append(Coinlink)
         m = m + 1
+        a = a + 1
+a = 0
 m = 0
 if a<7:
         try:
