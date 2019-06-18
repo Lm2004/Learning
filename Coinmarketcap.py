@@ -11,6 +11,7 @@ driver.get('https://coinmarketcap.com')
 website = list()
 name = list()
 GitHub = list()
+Update = list()
 Num = 0
 m=0
 for a in driver.find_elements_by_xpath('//a[@class="currency-name-container link-secondary"]'):
@@ -60,8 +61,34 @@ while Number < 100:
     l = l + 1
     Number = Number + 1
 
+n = 0
+p = 0
+while n < 100:
+    try:
+        if driver.find_element_by_xpath('//span[contains(text(),"Checking your browser before accessing")]'):
+            time.sleep(6)
+    except:
+        pass
+    
+    if GitHub[p] == nolink:
+        Update.append("Nothing")
+    else:
+        driver.get(GitHub[p])
+        if driver.find_elements_by_xpath('//summary[contains(text(),"Clone or download")]'):
+            driver.find_element_by_xpath('//a[@class="url fn"]').click()
+        if driver.find_elements_by_xpath('//a[@class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3"]'):
+            driver.find_element_by_xpath('//a[@class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3"]').click()
 
-data = pd.DataFrame({'name': name ,'link': website[0:100], 'GitHub': GitHub})
+        s = driver.find_element_by_xpath('//div[@class="text-gray f6 mt-2"]/relative-time[1]').text
+        print(s)
+        Update.append(s)
+    n = n + 1
+    p = p + 1
+
+
+
+
+data = pd.DataFrame({'name': name ,'link': website, 'GitHub': GitHub, 'Last Update': Update})
 data.to_csv('Criptonic.csv', index=False, encoding='utf-8')
 print(data)
 
