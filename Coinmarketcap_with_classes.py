@@ -13,16 +13,16 @@ driver = webdriver.Firefox()
 driver.get('https://coinmarketcap.com')
 link = list()
 name = list()
-Github = list()
+GitHub = list()
 Number_of_elements = int(input("Number of coin: "))
 if __name__ == "__main__":
-    coinmarket = coinmarketcap(Number_of_elements, driver, link, name, Github)
+    coinmarket = coinmarketcap(Number_of_elements, driver, link, name, GitHub)
     coinmarket.website()
     coinmarket.CoinName()
     coinmarket.Github_func()
 
 
-data = pd.DataFrame({'name': name ,'link': link, 'GitHub': Github})
+data = pd.DataFrame({'name': name ,'link': link, 'GitHub': GitHub})
 data.to_csv('Criptonic.csv', index=False, encoding='utf-8')
 print(data)
 
